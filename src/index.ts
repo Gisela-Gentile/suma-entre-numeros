@@ -10,9 +10,21 @@ rotulo2.innerHTML = "Ingrese otro número";
 btnEnviar.addEventListener("click", () => {
   let num1: number = Number(dato1.value);
   let num2: number = Number(dato2.value);
-  let i: number = num1;
+
   let suma: number = 0;
-  while (i <= num2) {
+  let numPrimero: number = 0;
+  let numSegundo: number = 0;
+
+  if (num1 > num2) {
+    numPrimero = num2;
+    numSegundo = num1;
+  } else {
+    numPrimero = num1;
+    numSegundo = num2;
+  }
+  let i: number = numPrimero;
+
+  while (i <= numSegundo) {
     suma += i++;
   }
   console.log("La suma total es: " + suma);
